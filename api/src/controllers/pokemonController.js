@@ -1,4 +1,4 @@
-const { Pokemon } = require("../db");
+const { Pokemon, Type } = require("../db");
 const axios = require("axios")
 const {Op} = require("sequelize")
 
@@ -65,9 +65,33 @@ const getPokemonById = async(id, source) => {
    }
  }
 
-const createNewPokemon = async(name, image, health, attack, defense, speed, height, weight) =>{
-   return await Pokemon.create({name, image, health, attack, defense, speed, height, weight});
-}
+
+ const createNewPokemon = async (name, image, health, attack, defense, speed, height, weight, types) => {
+  try {
+    const newPokemon = await Pokemon.create({
+      name,
+      image,
+      health,
+      attack,
+      defense,
+      speed,
+      height,
+      weight,
+    });
+
+    // Tipos existentes de Pokemon
+    const existingTypes = await Type.findAll({ where: { name: types } });
+
+    // Relacionándolos con los tipos
+    await newPokemon.addTypes(existingTypes);
+
+    return newPokemon;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+
 
 const searchPokemonByName = async (searchName) => {
   const dbPokemons = await Pokemon.findAll({

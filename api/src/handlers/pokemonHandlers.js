@@ -33,17 +33,15 @@ const getByName = async(req, res) => {
 
 //POST
 // https://localhost:3001/pokemons/
-const createPokemon = async (req, res) =>{
+const createPokemon = async (req, res) => {
   try {
-    const {name, image, health, attack, defense, speed, height, weight} = req.body;
-    const newPokemon = await createNewPokemon(name, image, health, attack, defense, speed, height, weight);
-    res.status(201).json(newPokemon)
+    const { name, image, health, attack, defense, speed, height, weight, types } = req.body;
+    const newPokemon = await createNewPokemon(name, image, health, attack, defense, speed, height, weight, types);
+    res.status(201).json(newPokemon);
   } catch (error) {
-    res.status(404).json({error: error.message})
-
+    res.status(500).json({ error: error.message });
   }
-
-}
+};
 
 
 
