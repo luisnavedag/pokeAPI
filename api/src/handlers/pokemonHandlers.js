@@ -1,69 +1,33 @@
 const axios = require("axios");
-const { createNewPokemon, gettingAllPokemons } = require("../controllers/pokemonController")
+const { createNewPokemon, gettingAllPokemons, getPokemonById, searchPokemonByName } = require("../controllers/pokemonController")
 
 //GET
 
 // https://localhost:3001/pokemons
 const getAllPokemons = async (req, res) => {
-    try {
-        // BRING FROM API
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=100');
-        const { results } = response.data;
-    
-        const pokemonPromises = results.map(async (pokemon) => {
-          const pokemonData = await axios.get(pokemon.url);
-          const { id, name, sprites, stats, height, weight } = pokemonData.data;
-    
-          return {
-            id,
-            name,
-            image: sprites.front_default,
-            health: stats[0].base_stat,
-            attack: stats[1].base_stat,
-            defense: stats[2].base_stat,
-            speed: stats[5].base_stat,
-            height,
-            weight
-          };
-        });
-    
-        const pokemonList = await Promise.all(pokemonPromises);
-        // BRING FROM BBDD
-        const bringAll = await gettingAllPokemons()
+    const results = await gettingAllPokemons();
 
-        const allPokemons = [...bringAll, ...pokemonList]
-        res.status(200).json(allPokemons);
-      } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Error al obtener la lista de Pokémon' });
-      }
-}
+    res.status(200).json(results)
+};
 
 // https://localhost:3001/pokemons/:idPokemon
 const getPokemon = async (req, res) => {
+      const { idPokemon } = req.params;
+      const source = isNaN(idPokemon) ? "bdd" : "api"
     try {
-        const { idPokemon } = req.params;
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`);
-        const { id, name, sprites, stats, height, weight } = response.data;
-    
-        const pokemon = {
-          id,
-          name,
-          image: sprites.front_default,
-          health: stats[0].base_stat,
-          attack: stats[1].base_stat,
-          defense: stats[2].base_stat,
-          speed: stats[5].base_stat,
-          height,
-          weight
-        };
-
-        if(!pokemon) throw new Error("No existe pokémon con ese id");
-
-        return res.status(200).json(pokemon)
+      const pokemon = await getPokemonById(idPokemon, source);
+      res.status(200).json(pokemon)
     } catch (error) {
-        return res.status(404).send("ERROR")
+      return res.status(404).send("ERROR")
     }
+}
+
+const getByName = async(req, res) => {
+  const { name } = req.query;
+
+  const result = await searchPokemonByName(name);
+  res.status(200).json(result)
+
 }
 
 
@@ -83,4 +47,4 @@ const createPokemon = async (req, res) =>{
 
 
 
-module.exports = {getAllPokemons, createPokemon, getPokemon}
+module.exports = {getAllPokemons, createPokemon, getPokemon, getByName}

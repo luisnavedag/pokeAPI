@@ -1,9 +1,8 @@
 const { Router } = require("express");
+const { getTypes } = require("../handlers/typesHandlers")
 
 const typesRouter = Router()    
 
-typesRouter.get("/", (req, res) =>{
-    res.send("Estoy en Types")
-})
+typesRouter.get("/", getTypes)
 
 module.exports = typesRouter;
