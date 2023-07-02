@@ -1,0 +1,58 @@
+.container{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    margin-bottom: 30px;
+    font-family: 'TASA Explorer', sans-serif;
+    flex-direction: column;
+    border: 1px solid #4752ab;
+    border-radius: 10px;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #7281f0 100% );
+    animation: slideLeft .6s ease-in-out;
+    transition: .3s;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: .5s;
+    }
+}
+
+.container h2{
+    color: white;
+}
+.container p{
+    color: white;
+}
+.container p span{
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.container img{
+    margin-top: 5px;
+    width: 160px;
+    height: 160px;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* _________________ANIMATIONS __________________*/
+
+@keyframes slideLeft {
+    0%{
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  

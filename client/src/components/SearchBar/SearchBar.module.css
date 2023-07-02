@@ -1,0 +1,19 @@
+.inputBar{
+    font-family: 'TASA Explorer', sans-serif;
+    font-size: medium;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #0d3ce9,
+    -20px -20px 60px #0d3ce9;
+    transition: 0.3s;
+}
+       
+.inputBar:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+    inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}

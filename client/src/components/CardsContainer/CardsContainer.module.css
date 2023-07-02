@@ -1,0 +1,7 @@
+.mainContainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    border: 1px solid black;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,287 @@
+.pagina{
+    background-attachment: fixed;
+    background-size: cover;
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.paginaLeft{
+    display: flex;
+    align-items: center;
+    animation: slideTop .6s ease-in-out;
+}
+
+.paginaLeft img{
+    width: 700px;
+    height: auto;
+    animation: floatImage 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5))
+}
+
+.pagina button{
+    background-color: rgba(233, 230, 38, 0.932);
+    border: 2px solid rgb(231, 216, 1);
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    margin-left: 0%;
+}
+
+.container{
+    height: 80vh;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0 2px 5% rgba(0, 0, 0, 0.3);
+    width: 30%;
+    max-width: 40%;
+    font-family: 'TASA Explorer', sans-serif;
+    overflow-x: hidden;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 0.5%;
+    margin-top: 0.3%;
+    margin-right: 0.4%;
+    margin-left: -100px;
+}
+
+.container button{
+    font-family: 'TASA Explorer', sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    padding: 0 2em;
+    border-radius: 0.3em;
+    color: #fff;
+    height: 60px;
+    width: 40%;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    &:hover{
+        box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+        transform: translateY(-0.2em);
+    }
+    &:active{
+        box-shadow: inset 0px 0.1em 0.6em #3c4fe0;
+    transform: translateY(0em);
+    }
+} 
+
+.container .previous{
+    background-color: rgb(181, 225, 228);
+    border: 2px solid rgb(136, 209, 214);
+    color: white;
+    width: 40%;
+    margin-top: 0%;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.container .create{
+    background-image: radial-gradient(circle at 50% -3.03%, #cdeb68 0, #b3e563 16.67%, #93db5b 33.33%, #6acc50 50%, #34bd48 66.67%, #00b247 83.33%, #00aa4d 100%);
+    width: 40%;
+    color: white;
+    margin-top: 0%;
+    transition: all 0.4s ease; 
+}
+
+
+.circle{
+    filter: grayscale(100%) opacity(50%) ;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.containerTypes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-start;
+    margin-left: 4%;
+    margin-bottom: 12%;
+    margin-top: 4%;
+}
+
+.containerTypes label{
+    cursor: pointer;
+    margin-bottom: 4%;
+}
+
+/* p{
+    margin-top: -15px;
+} */
+
+/* .containerTypes label input[type='checkbox']{
+    display: none;
+} */
+
+.containerTypes label:hover .circle {
+    filter: grayscale(0%) opacity(100%);
+}
+
+.containerTypes label input[type='checkbox']:checked ~ .circle {
+    filter: grayscale(0%) opacity(95%);
+}
+
+/* Hide the default checkbox */
+.checked input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+.checked {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+}
+  
+  /* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 2.3em;
+    width: 2.3em;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: .4s;
+  }
+  
+.checkmark:hover {
+    box-shadow: inset 17px 17px 16px #b3b3b3,
+              inset -17px -17px 16px #ffffff;
+}
+  
+  /* When the checkbox is checked, add a blue background */
+.checked input:checked ~ .checkmark {
+    box-shadow: none;
+    background-color: limegreen;
+    transform: rotateX(360deg);
+}
+  
+.checked input:checked ~ .checkmark:hover {
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+.checked input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+.checked .checkmark:after {
+    left: 0.96em;
+    top: 0.7em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    box-shadow: 0.1em 0.1em 0em 0 rgba(0,0,0,0.3);
+    transform: rotate(45deg);
+  }
+
+
+
+.show{
+    display: block
+}
+
+.hide{
+    display: none
+}
+
+.formdiv{
+    
+    position: static;
+}
+
+.formdiv label{
+    display: flex;
+    margin-left: 5%;
+    margin-bottom: 5px;
+}
+
+.formdiv input{
+    border: 2px solid #f0f0f0;
+    background: #e8e8e8;
+    border-radius: 4px;
+    display: block;
+    width: 70%;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'TASA Explorer', sans-serif;
+    margin-left: 2vw;
+    transition: .3s;
+    &:focus{
+        outline-color: #877f7f;
+        background: whitesmoke;
+        box-shadow: inset 20px 20px 60px whitesmoke,
+        inset -20px -20px 60px #ffffff;
+        transition: 0.3s;
+    }
+}
+
+.formdiv p {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    font-size: 14px;
+    color: #e74c3c;
+}
+
+.bytype{
+    display: flex;
+    align-items: center;
+    
+}
+
+
+/*__________________ANIMATIONS_____________-*/
+
+@keyframes floatImage{
+    0%{
+      transform: translateY(0);
+    }
+    50%{
+      transform: translateY(-24px);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideTop {
+    0%{
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

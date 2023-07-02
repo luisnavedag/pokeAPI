@@ -1,0 +1,23 @@
+.buttons {
+    --size: 32px;
+    --margin: 6px;
+    margin: 0 var(--margin);
+    border-radius: 50%;
+    background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #7281f0 100% );;
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0 6px;
+    color: black;
+    font-weight: 700;
+    font-family: 'TASA Explorer', sans-serif;
+  }
+
+.paginado{
+    display: flex;
+    justify-content: center;
+}

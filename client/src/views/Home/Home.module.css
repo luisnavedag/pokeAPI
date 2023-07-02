@@ -1,0 +1,110 @@
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.9em;
+    /* border: 1px solid black; */
+    flex-wrap: wrap;
+}
+
+.sortFilter{
+    display: flex;
+    justify-content: center;
+    gap: 1.7em;
+}
+
+.sortFilter select{
+    border-radius: 2em;
+    font-family: 'TASA Explorer', sans-serif;
+    padding: 0.5rem;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+    box-shadow: 20px 20px 60px #0d3ce9;
+    outline: none;
+    width: 200px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+select option{
+    background-color: #f2f2f2;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+/*__________ LOADER */
+
+.loading img{
+    margin-top: 200px;
+    animation: spin .5s infinite;
+    width: 100px;
+    height: auto; 
+}
+
+.loading h3{
+    font-family: 'TASA Explorer', sans-serif;
+    color: white;
+    font-size: 25px;
+}
+
+.notFound{
+    background: url("../../assets/5c5fa89196be9b187cdcddfa0a40e6d86c115c49_hq.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: slideTop .5s ease-in-out;
+    transition: .3s;
+    width: 40%;
+    height: 50vh;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.divLetters{
+    border: 1px solid white;
+    border-radius: 20px;
+    height: fit-content;
+    margin-top: 20px;
+    margin-left: -30px;
+    padding: 15px;
+    background-color: whitesmoke;
+}
+
+.divLetters span{
+    font-family: 'TASA Explorer', sans-serif;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.notFound img{
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    margin-top: 60px;
+    margin-right: 30px;
+    width: 300px;
+    height: 300px;
+}
+
+/* Spin Animation */
+@keyframes spin {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes slideTop {
+    0%{
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
