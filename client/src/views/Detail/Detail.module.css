@@ -1,4 +1,6 @@
 .detailContainer{
+    border: 3px solid green;
+    height: 90vh;
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +12,7 @@
 
 .divLeft{
     /* border: 1px solid black; */
-    height: 80vh;
+    height: 500px;
     width: 50vw;
     background-image: url("../../assets/fondoDetail.jpg");
     background-size: cover;
@@ -28,9 +30,9 @@
 }
 
 .pokeDetail{
-    /* border: 1px solid black; */
+    border: 1px solid black;
     background-image: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
-    height: 80vh;
+    height: 500px;
     width: 25vw;
     font-family: 'TASA Explorer', sans-serif;
     color: whitesmoke;
@@ -39,7 +41,7 @@
 }
 
 .pokeDetail h1{
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .pokeDetail h4{

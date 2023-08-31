@@ -33,7 +33,7 @@ const Detail = () => {
             </div>
             <div className={styles.pokeDetail}>
                 <h1>Name: {pokemon.name}</h1>
-                <h4 style={{marginTop: "60px"}}><span>&#9829;</span>  Health: {pokemon.health}</h4>
+                <h4 style={{marginTop: "30px"}}><span>&#9829;</span>  Health: {pokemon.health}</h4>
                 <h4><span>&#9876;</span>  Attack: {pokemon.attack}</h4>
                 <h4><span>&#128737;</span>  Defense: {pokemon.defense}</h4>
                 <h4><span>&#9761;</span>  Speed: {pokemon.speed}</h4>
