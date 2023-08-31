@@ -5,6 +5,7 @@ body, html {
   width: 100%;
   height: 100%;
   background: radial-gradient( 100% 100% at 100% 0%, #33b2d6 0%, #0e24ce 100% );
+  background-color: #0e24ce;
 
   /* background-image: radial-gradient(circle at 85.36% -11.24%, #ffd561 0, #ffc764 10%, #ffb767 20%, #ffa669 30%, #ff9569 40%, #f68368 50%, #e17266 60%, #cd6564 70%, #bc5a63 80%, #ad5162 90%, #a04b62 100%); */
   background-size: 100vw 180vh;
