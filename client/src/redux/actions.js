@@ -18,7 +18,7 @@ export const ORDER_BY_NAME_OR_STRENGH = "ORDER_BY_NAME_OR_STRENGH";
 // GET POKEMONS
 export function getPokemons(){
     return async function(dispatch){
-        const apiData = await axios.get("http://localhost:3001/pokemons");
+        const apiData = await axios.get("https://pokeapi-back-u5o9.onrender.com/pokemons");
         const pokemons = apiData.data;
         
         dispatch({
@@ -31,7 +31,7 @@ export function getPokemons(){
 //GET TYPES
 export function getTypes(){
     return async function(dispatch){
-        const apiData = await axios.get("http://localhost:3001/types");
+        const apiData = await axios.get("https://pokeapi-back-u5o9.onrender.com/types");
         const types = apiData.data;
 
         dispatch({ 
@@ -44,7 +44,7 @@ export function getTypes(){
 //POST POKEMONS
 export function postPokemon(payload){
     return async function(dispatch){
-        const pokemon = await axios.post("http://localhost:3001/pokemons", payload)
+        const pokemon = await axios.post("https://pokeapi-back-u5o9.onrender.com/pokemons", payload)
         
         return {
             type:POST_POKEMON,
@@ -57,7 +57,7 @@ export function postPokemon(payload){
 export function getPokemonName(name){
     return async function (dispatch){
         try{
-            const apiData = await axios.get("http://localhost:3001/pokemons/name?name=" + name)
+            const apiData = await axios.get("https://pokeapi-back-u5o9.onrender.com/pokemons/name?name=" + name)
             const pokemon = apiData.data;
 
             return dispatch({
@@ -78,7 +78,7 @@ export function getPokemonName(name){
 export function getDetail (id){
     return async function (dispatch){
         try{
-            let apiData = await axios.get("http://localhost:3001/pokemons/" + id);
+            let apiData = await axios.get("https://pokeapi-back-u5o9.onrender.com/pokemons/" + id);
             let pokemon = apiData.data;
 
             return dispatch({
