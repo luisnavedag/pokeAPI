@@ -1,5 +1,5 @@
 .detailContainer{
-    border: 3px solid green;
+    /* border: 3px solid green; */
     height: 90vh;
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@
 }
 
 .pokeDetail{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-image: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
     height: 500px;
     width: 25vw;
