@@ -8,7 +8,12 @@ const sequelize = new Sequelize(`postgres://luis:skuDfdawr8abaQn2eguV9idgoOjDC8v
    {
       logging: false, // set to console.log to see the raw SQL queries
       native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-      ssl: true
+      dialectOptions: {
+         ssl: {
+           require: true, // Opcional, establece esto en true si la base de datos lo requiere
+           rejectUnauthorized: false, // Opcional, establece esto en false si no quieres rechazar conexiones no autorizadas (puede ser útil para pruebas)
+         },
+       },
    }
 );
 const basename = path.basename(__filename);
