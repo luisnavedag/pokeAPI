@@ -83,3 +83,36 @@ body{
    transition: .3s;
    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
 }
+
+
+@media (min-width: 371px) and (max-width: 767px){
+    .mainContainer{
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .leftDiv{
+        border: 1px solid black;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0;
+    }
+
+    .leftDiv button{
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    .rightDiv{
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 60%;
+    }
+    .pokemons{
+        min-width: 100%;
+        height: auto;
+    }
+}
