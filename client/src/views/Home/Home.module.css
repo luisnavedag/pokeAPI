@@ -108,3 +108,16 @@ to {
       opacity: 1;
     }
   }
+
+  @media (min-width: 371px) and (max-width: 767px){
+    .sortFilter{
+        /* border: 1px solid red; */
+        width: 100%;
+    }
+
+    .sortFilter select{
+        font-size: 12px;
+        width: 100px;
+    }
+
+  }

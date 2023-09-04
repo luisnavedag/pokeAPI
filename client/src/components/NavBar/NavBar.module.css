@@ -38,12 +38,15 @@
 
 @media (min-width: 371px) and (max-width: 767px){
     .mainContainer{
-        border: 1px solid red;
+        /* border: 1px solid red; */
+        height: 5vh;
     }
 
     .mainContainer button{
         font-size: 10px;
     }
+
+
 
     
 }
