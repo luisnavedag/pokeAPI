@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 const mainRouter = require("./routes")
+const cors = require('cors');
 
 require('./db.js');
 
@@ -22,6 +23,16 @@ server.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
+
+// Configura el middleware cors
+const corsOptions = {
+  origin: 'https://poke-api-alpha-inky.vercel.app', // Cambia esto a tu dominio permitido
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+};
+
+server.use(cors(corsOptions));
 
 server.use("/", mainRouter);
 
