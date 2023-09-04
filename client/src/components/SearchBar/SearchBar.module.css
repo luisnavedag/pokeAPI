@@ -17,3 +17,29 @@
     inset -20px -20px 60px #ffffff;
     transition: 0.3s;
 }
+
+.searchBtn{
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    right: 40px;
+    font-size: 20px;
+    &:hover{
+        
+    }
+}
+
+
+@media (min-width: 371px) and (max-width: 767px){
+    .inputBar{
+        font-size: small;
+        width: 100px;
+        height: 10px;
+    }
+    .buttonBar {
+        font-size: small;
+        height: 10px;
+
+    }
+}

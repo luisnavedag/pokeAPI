@@ -14,8 +14,8 @@ const NavBar = () => {
   };
     return (
         <div className={styles.mainContainer}>
-        <Link to="/home" onClick={handleHomeClick}><button>Home </button></Link>
-        <Link to="/pokemons"><button>New Pokémon &#10010;</button></Link>
+        <Link to="/home" onClick={handleHomeClick}><button className={styles.buttonBar}>Home </button></Link>
+        <Link to="/pokemons"><button className={styles.buttonBar}>New Pokémon &#10010;</button></Link>
         <SearchBar></SearchBar>
         </div>
        

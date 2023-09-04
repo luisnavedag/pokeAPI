@@ -29,9 +29,8 @@ const SearchBar = () => {
          className={styles.inputBar} 
          type='search' />
          <button 
-         style={{marginLeft: "-25px", height: "50px", borderRadius: "1em"}}
-         className={styles.buttonBar} 
-         onClick={handleSubmit}>Find &#128270;</button>
+         className={styles.searchBtn} 
+         onClick={handleSubmit}>&#128270;</button>
       </div>
     )
 }
