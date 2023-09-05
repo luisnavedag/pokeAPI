@@ -18,6 +18,30 @@
   }
 
 .paginado{
+    width: 100vw;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
+    gap: 1rem;
+}
+
+
+@media (min-width: 371px) and (max-width: 767px){
+  .buttons{
+    --size: 25px;
+    max-width: 30px;
+    min-width: 30px;
+    height: 30px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .paginado{
+    /* border: 1px solid red; */
+    width: 100vw;
+    justify-content: space-evenly;
+    gap: 0.2rem;
+    position: relative;
+    right: 40px;
+  }
 }

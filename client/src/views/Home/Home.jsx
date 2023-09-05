@@ -88,11 +88,14 @@ const Home = () =>{
                 }
             </select>
         </div>
+        <div className={styles.pagination}>
         <Paginado  
         pokemonsPerPage={pokemonsPerPage}
         allPokemons={allPokemons.length}
         paginado={paginado}
         page={currentPage} />
+
+        </div>
          <div className={styles.cards}>
             {
                 currentPokemons.length ? 

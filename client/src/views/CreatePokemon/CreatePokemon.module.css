@@ -285,3 +285,36 @@
       opacity: 1;
     }
   }
+
+
+  @media (min-width: 371px) and (max-width: 767px){
+    .paginaLeft{
+        display: none;
+    }
+
+    .pagina{
+        /* border: 1px solid red; */
+        width: 100%;
+
+    }
+    
+    .container{
+        max-width: 300px;
+        width: 300px;
+        margin-left: 0;
+    }
+
+    .container .previous{
+        margin-left: 0;
+    }
+    .checkmark{
+        width: 2em;
+        height: 2em;
+        font-size: 15px;
+    }
+   
+    h2{
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+  }

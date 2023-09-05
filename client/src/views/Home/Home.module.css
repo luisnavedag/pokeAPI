@@ -1,3 +1,7 @@
+.mainContainer{
+    overflow-x: hidden;
+}
+
 .cards{
     display: flex;
     justify-content: space-evenly;
@@ -88,6 +92,13 @@ select option{
     height: 300px;
 }
 
+.pagination{
+    /* border: 1px solid green; */
+    display: flex;
+    width: 100vh;
+    justify-content: start;
+}
+
 /* Spin Animation */
 @keyframes spin {
 from {
@@ -119,5 +130,8 @@ to {
         font-size: 12px;
         width: 100px;
     }
+
+
+
 
   }
