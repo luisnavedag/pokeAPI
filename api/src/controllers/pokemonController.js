@@ -27,7 +27,7 @@ const gettingAllPokemons = async() => {
         createdInDB: pokemon.createdInDB
       }));
 
-      const apiResponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=30');
+      const apiResponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=100');
       const apiPokemons = apiResponse.data.results;
   
       const apiPokemonDetails = await Promise.all(
